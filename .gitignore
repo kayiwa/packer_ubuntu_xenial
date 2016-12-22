@@ -3,3 +3,8 @@ packer_cache/
 
 # For built boxes
 *.box
+
+# ISO's
+iso
+packer.log
+.DS_Store
