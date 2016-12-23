@@ -1,5 +1,8 @@
 #!/bin/sh -eux
 
+# uninstall ansible
+pip uninstall -y ansible;
+
 # Delete all Linux headers
 dpkg --list \
   | awk '{ print $2 }' \
