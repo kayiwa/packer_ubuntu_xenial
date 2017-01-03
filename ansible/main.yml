@@ -19,3 +19,4 @@
 
   roles:
     - { role: filebeat, become: yes }
+    - { role: openssh, become: yes }
