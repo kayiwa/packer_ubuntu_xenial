@@ -150,6 +150,8 @@
       "type": "ansible-local",
       "playbook_file": "ansible/main.yml",
       "role_paths": [
+        "ansible/roles/firewall",
+        "ansible/roles/openssh",
         "ansible/roles/filebeat"
       ]
     },
