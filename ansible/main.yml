@@ -3,20 +3,16 @@
   become: yes
   gather_facts: yes
 
-  tasks:
-    - name: allow openssh-server
-      ufw: rule=allow src={{ item }} name=OpenSSH
-      with_items:
-        - 128.112.0.0/16
-        - 140.180.0.0/16
-
-    - name: allow for Big Fix
-      ufw: rule=allow src={{ item }} port=52311
-      with_items:
-        - 128.112.200.215/32
-        - 128.112.201.27/32
-        - 128.112.201.79/32
-
   roles:
-    - { role: filebeat, become: yes }
-    - { role: openssh, become: yes }
+    - {
+        role: firewall,
+        become: yes
+      }
+    - {
+        role: filebeat,
+        become: yes
+      }
+    - {
+        role: openssh,
+        become: yes
+      }
